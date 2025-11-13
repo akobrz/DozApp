@@ -1,2 +1,0 @@
-# DozApp
-Exercise for DOZ
