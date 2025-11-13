@@ -13,7 +13,7 @@ public class Tweet {
     @GeneratedValue(strategy = AUTO)
     UUID id;
 
-    @Column(name = "tweet_id")
+    @Column(name = "tweet_id", unique = true)
     String tweetId;
 
     @Column(name = "author_id")
@@ -68,4 +68,5 @@ public class Tweet {
     public void setText(String text) {
         this.text = text;
     }
+
 }

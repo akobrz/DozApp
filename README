@@ -1,0 +1,31 @@
+Exercise application to get tweets for one of X platform user: NASA, SpaceX, BoeingSpace
+
+Use:
+localhost:8080
+    to enter simple console
+
+Use (in free access only 1 per 15min, 100 per month):
+GET http://localhost:8080/tweets/nasa
+GET http://localhost:8080/tweets/spacex
+GET http://localhost:8080/tweets/boeingspace
+    to get new tweets (5 default) and save them to database (mariadb).
+
+Use:
+GET http://localhost:8080/user/nasa
+GET http://localhost:8080/user/spacex
+GET http://localhost:8080/user/boeingspace
+    to get short info about each user.
+
+Use:
+GET http://localhost:8080/db/tweets/nasa
+GET http://localhost:8080/db/tweets/spacex
+GET http://localhost:8080/db/tweets/boeingspace
+    to display all tweets (as json) for specific user from database (mariadb)
+
+Use:
+POST http://localhost:8080/db/tweets/nasa
+POST http://localhost:8080/db/tweets/spacex
+POST http://localhost:8080/db/tweets/boeingspace
+    to add a new tweet manually (as json) to database (mariadb)
+
+In case of wrong user, dedicated error is risen ("User does not exist")

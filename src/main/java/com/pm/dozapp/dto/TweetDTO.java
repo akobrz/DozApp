@@ -13,7 +13,6 @@ public class TweetDTO {
     @JsonProperty("author_id")
     private String authorId;
 
-    @JsonProperty("text")
     private String text;
 
     public TweetDTO() {
@@ -49,5 +48,15 @@ public class TweetDTO {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return "TweetDTO{" +
+                "tweetId='" + tweetId + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                ", authorId='" + authorId + '\'' +
+                ", text='" + text + '\'' +
+                '}';
     }
 }

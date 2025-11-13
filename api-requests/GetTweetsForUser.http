@@ -1,0 +1,2 @@
+# Get only new tweets for selected user from Twitter
+GET http://localhost:8080/tweets/spacex

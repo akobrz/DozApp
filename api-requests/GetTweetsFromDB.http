@@ -1,0 +1,4 @@
+# Get tweets for NASA, SpaceX, BoeingSpace from DB
+GET http://localhost:8080/db/tweets/nasa
+Content-Type:application/json
+
