@@ -1,12 +1,12 @@
 package com.pm.dozapp.exception;
 
-public enum DozAppError {
+public enum ErrorType {
     USER_NOT_FOUND("User does not exist"),
     TWEET_ALREADY_REGISTERED("Tweet already registered");
 
     private String message;
 
-    DozAppError(String message) {
+    ErrorType(String message) {
         this.message = message;
     }
 

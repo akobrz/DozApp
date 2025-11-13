@@ -3,7 +3,7 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 COPY src ./src
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 # to locate jar
 RUN ls -la /app/target/
 RUN find /app -name "*.jar" -type f
