@@ -52,20 +52,19 @@ public class TweetService {
 
     public UserDTO getUserByUsername(String username) {
         String userUrl = "https://api.twitter.com/2/users/by/username/" + username + "?user.fields=username,name";
-        HttpEntity<String> entity = getHttpEntity();
-        return performGetUserTry(userUrl, entity);
+        return performGetUser(userUrl, getHttpEntity());
     }
 
-    private UserDTO performGetUserTry(String userUrl, HttpEntity<String> entity) {
+    private UserDTO performGetUser(String userUrl, HttpEntity<String> entity) {
         try {
-            return getUsers(userUrl, entity);
+            return getUser(userUrl, entity);
         } catch (Exception e) {
-            log.error("Error for getting user: {}", e.getMessage());
+            log.error("Error during getting user: {}", e.getMessage());
             throw new AppException(INTERNAL_SERVER_ERROR);
         }
     }
 
-    private UserDTO getUsers(String userUrl, HttpEntity<String> entity) {
+    private UserDTO getUser(String userUrl, HttpEntity<String> entity) {
         ResponseEntity<UserResponse> response = restTemplate.exchange(userUrl, GET, entity, UserResponse.class);
         log.info("Response for /user/{username}: status={}, body={}", response.getStatusCode(), response.getBody());
         if (isGetUserResponseSuccessful(response)) return response.getBody().getData();
@@ -83,17 +82,15 @@ public class TweetService {
 
     private List<TweetDTO> getTweetsByUserId(String userId, int count) {
         String tweetsUrl = "https://api.twitter.com/2/users/" + userId + "/tweets" +
-                "?max_results=" + max(count, 5) +
-                "&tweet.fields=created_at,author_id,text";
-        HttpEntity<String> entity = getHttpEntity();
-        return performGetTweetsTry(tweetsUrl, entity);
+                "?max_results=" + max(count, 5) + "&tweet.fields=created_at,author_id,text";
+        return performGetTweets(tweetsUrl, getHttpEntity());
     }
 
-    private List<TweetDTO> performGetTweetsTry(String tweetsUrl, HttpEntity<String> entity) {
+    private List<TweetDTO> performGetTweets(String tweetsUrl, HttpEntity<String> entity) {
         try {
             return getNewTweets(tweetsUrl, entity);
         } catch (Exception e) {
-            log.error("Error for getting tweets: {}", e.getMessage());
+            log.error("Error during getting tweets: {}", e.getMessage());
             throw new AppException(INTERNAL_SERVER_ERROR);
         }
     }
@@ -125,7 +122,8 @@ public class TweetService {
     }
 
     private List<TweetDTO> saveAllNotExistingTweets(ResponseEntity<TweetsResponse> response) {
-        return response.getBody().getData().stream().map(this::saveNotExistingTweet)
+        return response.getBody().getData().stream()
+                .map(this::saveNotExistingTweet)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .map(TweetMapper::getDTO)
@@ -141,7 +139,8 @@ public class TweetService {
         validateUsername(username, validUsers);
         return tweetRepository
                 .findAllByAuthorId(validUsers.get(username)).stream()
-                .map(TweetMapper::getDTO).toList();
+                .map(TweetMapper::getDTO)
+                .toList();
     }
 
     public TweetDTO createTweetInDb(TweetDTO tweetDTO) {
