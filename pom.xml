@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pm</groupId>
-    <artifactId>doz-app</artifactId>
+    <artifactId>tweets</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>doz-app</name>
     <description>doz-app</description>

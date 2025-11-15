@@ -1,16 +1,11 @@
 package com.pm.dozapp.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class UserDTO {
 
-    @JsonProperty("id")
     private String id;
 
-    @JsonProperty("username")
     private String username;
 
-    @JsonProperty("name")
     private String name;
 
     public UserDTO() {

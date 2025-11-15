@@ -1,4 +1,4 @@
-package com.pm.dozapp.controller;
+package com.pm.dozapp.templates;
 
 public interface ConsoleTemplate {
 
@@ -15,6 +15,7 @@ public interface ConsoleTemplate {
                 <br><br>
                 <button type="submit">Get tweets</button>
             </form>
+            %s
         </body>
         </html>
         """;

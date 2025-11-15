@@ -1,10 +1,7 @@
 package com.pm.dozapp.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class UserResponse {
 
-    @JsonProperty("data")
     private UserDTO data;
 
     public UserResponse(UserDTO data) {

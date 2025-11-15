@@ -13,7 +13,6 @@ public class TweetDTO {
     @JsonProperty("author_id")
     private String authorId;
 
-    @JsonProperty("text")
     private String text;
 
     public TweetDTO() {

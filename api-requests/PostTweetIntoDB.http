@@ -1,0 +1,9 @@
+POST http://localhost:8080/db/tweet
+Content-Type: application/json
+
+{
+  "id":"1983664082369818997",
+  "created_at":"2025-10-29T22:35:46.000Z",
+  "author_id":"3474004752",
+  "text":"RT @ulalaunch: T-minus 7 days!\n\nULA has integrated the ViaSat-3 Flight 2 satellite atop our next Atlas V rocket at Cape Canaveral. The stat…"
+}

@@ -1,12 +1,9 @@
 package com.pm.dozapp.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class TweetsResponse {
 
-    @JsonProperty("data")
     private List<TweetDTO> data;
 
     public TweetsResponse() {
