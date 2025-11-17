@@ -28,4 +28,73 @@ POST http://localhost:8080/db/tweets/spacex
 POST http://localhost:8080/db/tweets/boeingspace
     to add a new tweet manually (as json) to database (mariadb)
 
-In case of wrong user, dedicated error is risen ("User does not exist")
+In case of wrong user, dedicated app throws error ("User does not exist")
+Also, when too many request (per 15 min.) ("Too many requests")
+
+
+Output (exemplary):
+  GET http://localhost:8080/user/spacex
+  {
+    "id": "34743251",
+    "username": "SpaceX",
+    "name": "SpaceX"
+  }
+
+  GET http://localhost:8080/db/tweets/nasa
+  [
+    {
+      "text": "LIVE: Sentinel-6B, a new satellite that will help measure Earth's sea levels, is set to launch soon! Listen to agency leaders and mission partners discuss the mission and answer media questions: https://t.co/fDaLzMmRp9 https://t.co/96US8AdkNI",
+      "id": "1989800577300119818",
+      "created_at": "2025-11-15T21:00:00.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "This new satellite will measure sea levels for almost all of Earth’s ocean 🌊\n \nSentinel-6B adds to a sea level data record spanning over 30 years—information that helps improve weather forecasts, keep ships safe, and ensure astronauts splash down safely. https://t.co/kGBBCQoKeM https://t.co/Nqq0KsZ7tu",
+      "id": "1989421062874976337",
+      "created_at": "2025-11-14T19:51:57.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "After a successful launch on @blueorigin’s New Glenn rocket, our ESCAPADE mission has begun its journey - ultimately destined for Mars. The twin spacecraft will orbit the Red Planet, investigating how the solar wind stripped its atmosphere. https://t.co/URspHkGcLx https://t.co/sMahZAN2Ov",
+      "id": "1989189290929320024",
+      "created_at": "2025-11-14T04:30:58.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "RT @NASASolarSystem: NASA’s ESCAPADE mission, our next science mission to Mars, has a new launch date: today! The launch window opens at 2:…",
+      "id": "1989044048896880857",
+      "created_at": "2025-11-13T18:53:50.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "Keep an eye on the night sky in October—you might catch a falling star!\n\nThe Orionid meteor shower reaches its peak on the night of Oct. 21-22, and the Draconids will also be visible earlier in the month. Check out what else to watch out for: https://t.co/JlRSzHUlbA",
+      "id": "1973135281323659307",
+      "created_at": "2025-09-30T21:18:04.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "A nice(ar) view of Earth 😎\n \nNISAR has released preliminary radar images that showcase its ability to distinguish between different land cover. Launched in July, this satellite tracks changes in land and ice surfaces on Earth. https://t.co/EiwM0NtAcM https://t.co/fCJeVTqaYd",
+      "id": "1972716723565445426",
+      "created_at": "2025-09-29T17:34:52.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "RT @SecDuffyNASA: I’m here in Sydney at the 76th International Aeronautical Congress where I’ll be meeting with global space leaders this w…",
+      "id": "1972653848033419332",
+      "created_at": "2025-09-29T13:25:02.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "RT @NASASpox: It's been a jam-packed week at NASA as we keep America LEADING in air and space.✨\n\n🧑‍🚀 10 new astronaut candidates\n☀️ 3 space…",
+      "id": "1971647763801870570",
+      "created_at": "2025-09-26T18:47:12.000Z",
+      "author_id": "11348282"
+    },
+    {
+      "text": "Our astronaut candidates are about to begin two years of training. Come join the journey!\n\nFollow @astro_benbailey, @astro_fuhrmann, @astro_camjones, @astro_lawler and @AstroAnnaMenon here on X: https://t.co/QWNvMKffNW\nCheck out our other social accounts: https://t.co/ntewbhK186 https://t.co/aKdvj4qwDI",
+      "id": "1971641467723567272",
+      "created_at": "2025-09-26T18:22:11.000Z",
+      "author_id": "11348282"
+    }
+  ]
+
