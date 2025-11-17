@@ -29,6 +29,13 @@ public class Tweet {
     public Tweet() {
     }
 
+    public Tweet(String tweetId, String authorId, String createdAt, String text) {
+        this.tweetId = tweetId;
+        this.authorId = authorId;
+        this.createdAt = createdAt;
+        this.text = text;
+    }
+
     public UUID getId() {
         return id;
     }

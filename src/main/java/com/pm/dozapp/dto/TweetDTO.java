@@ -18,6 +18,13 @@ public class TweetDTO {
     public TweetDTO() {
     }
 
+    public TweetDTO(String tweetId, String createdAt, String authorId, String text) {
+        this.tweetId = tweetId;
+        this.createdAt = createdAt;
+        this.authorId = authorId;
+        this.text = text;
+    }
+
     public String getTweetId() {
         return tweetId;
     }
